@@ -5,9 +5,7 @@ namespace BytesOne.Profiler
 {
     public class RenderingProfiler : MonoBehaviour
     {
-#if UNITY_2020_2_OR_NEWER
         private float deltaTime = 0.25f;
-#endif
         public float updateTime = 0.25f;
         public bool enableDebug;
 

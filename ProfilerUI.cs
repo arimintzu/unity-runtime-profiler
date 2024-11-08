@@ -72,10 +72,7 @@ namespace BytesOne.Profiler
                 Debug.LogError("RenderingProfiler component not found in the scene.");
                 //enabled = false;
             }
-        }
 
-        void Update()
-        {
             if (systemProfiler != null)
             {
                 osText.text = $"OS: {systemProfiler.OS}";
@@ -85,6 +82,13 @@ namespace BytesOne.Profiler
                 graphicsDeviceNameText.text = $"GPU: {systemProfiler.GraphicsDeviceName}";
                 graphicsDeviceVendorText.text = $"GPU Vendor: {systemProfiler.GraphicsDeviceVendor}";
                 graphicsDeviceVersionText.text = $"GPU Version: {systemProfiler.GraphicsDeviceVersion}";
+            }
+        }
+
+        void Update()
+        {
+            if (systemProfiler != null)
+            {
                 fpsText.text = $"FPS: {Mathf.RoundToInt(systemProfiler.FPS)}";
                 averageFpsText.text = $"Avg FPS: {Mathf.RoundToInt(systemProfiler.AverageFPS)}";
                 renderTimeText.text = $"Render: {systemProfiler.RenderTime:F2} ms";
